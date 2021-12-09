@@ -19,21 +19,24 @@ function NavBar(){
             <NavLink 
                 to="/"
                 exact
-                style={linkStyles}
+                className="links"
+                id="home-link"
             >
                 Home
             </NavLink>
             <NavLink 
                 to="/items"
                 exact 
-                style={linkStyles}
+                className="links"
+                id="items-link"
             >
                 Items
             </NavLink>
             <NavLink 
-                to="items/new"
+                to="/items/new"
                 exact
-                style={linkStyles}
+                className="links"
+                id="new-link"
             >
                 New Item
             </NavLink>

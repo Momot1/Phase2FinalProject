@@ -1,15 +1,33 @@
 import React, {useEffect, useState} from "react";
+import Item from "./Item";
 
 function Items(){
     const [items, setItems] = useState([])
 
-
-
-    fetch("http://localhost:3000/items")
+    useEffect(() => {
+        fetch("http://localhost:3000/items")
             .then(resp => resp.json())
-            .then(data => console.log(data))
+            .then(data => setItems(data))
+    }, [])
 
-    return <h1>ITEMS</h1>
+    const itemElements = items.map(item => <Item key={item.id} name={item.name} description={item.description} image={item.image} onItemDelete={handleDelete} id={item.id}/>)
+
+    function handleDelete(id){
+        fetch(`http://localhost:3000/items/${id}`, {
+            method: "DELETE"
+        })
+            .then(resp => resp.json())
+            .then(() => {
+                const updatedItems = items.filter(item => item.id !== id)
+                setItems(updatedItems)
+            })
+    }
+
+    return (
+        <div>
+            {itemElements}
+        </div>
+    )
 }
 
 export default Items

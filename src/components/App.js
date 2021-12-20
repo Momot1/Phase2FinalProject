@@ -6,7 +6,6 @@ import NewItem from "./NewItem"
 import Login from "./Login"
 import Signup from "./Signup"
 
-
 function App() {
 
   function setRootStyling(){

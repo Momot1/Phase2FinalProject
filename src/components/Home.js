@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Item from "./Item";
+import WishlistItem from "./WishlistItem";
 
-function Items(){
+function Home(){
     const [search, setSearch] = useState("")
-    const [items, setItems] = useState([])
+    const [wishlistItems, setItems] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:3000/items")
@@ -11,7 +11,17 @@ function Items(){
             .then(data => setItems(data))
     }, [])
 
-    const itemElements = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase())).map(item => <Item key={item.id} name={item.name} description={item.description} image={item.image} onItemDelete={handleDelete} id={item.id}/>)
+    const itemElements = wishlistItems.filter(searchedWish => searchedWish.name.toLowerCase()
+        .includes(search.toLowerCase()))
+        .map(wishItem => <WishlistItem 
+                            key={wishItem.id} 
+                            name={wishItem.name} 
+                            description={wishItem.description} 
+                            image={wishItem.image} 
+                            onItemDelete={handleDelete} 
+                            id={wishItem.id}
+                            price={wishItem.price}
+                            purchaseLink={wishItem.purchase}/>)
 
     function handleDelete(id){
         fetch(`http://localhost:3000/items/${id}`, {
@@ -19,25 +29,18 @@ function Items(){
         })
             .then(resp => resp.json())
             .then(() => {
-                const updatedItems = items.filter(item => item.id !== id)
+                const updatedItems = wishlistItems.filter(item => item.id !== id)
                 setItems(updatedItems)
             })
     }
 
-    if(search !== ""){
-        const searchedItems = items.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
-        console.log(searchedItems)
-    }
-
-    console.log(search)
-
     return (
         <div>
-            <input type="text" value={search} placeholder="Search" onChange={e => setSearch(e.target.value)}/>
+            <input type="text" value={search} placeholder="Search" onChange={e => setSearch(e.target.value)} id="searchBar"/>
+            <h2>Wishlist</h2>
             {itemElements}
-            <h2>More items</h2>
         </div>
     )
 }
 
-export default Items
+export default Home

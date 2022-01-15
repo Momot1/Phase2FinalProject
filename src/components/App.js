@@ -1,36 +1,33 @@
-import React from "react";
+import React, {useState} from "react";
 import { BrowserRouter, Switch , Route } from "react-router-dom"
 import NavBar from "./NavBar"
 import Home from "./Home"
 import NewItem from "./NewItem"
 import Login from "./Login"
 import Signup from "./Signup"
+import Logout from "./Logout";
 
 function App() {
-
-  function setRootStyling(){
-    const root = document.getElementById("root")
-    console.log(root)
-  }
-  
-  setRootStyling()
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   return (
     <BrowserRouter>
-    <NavBar />
+    <NavBar isLoggedIn={isLoggedIn} onLogout={() => setIsLoggedIn(false)}/>
     <Switch>
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/items/new"> 
-        <NewItem />
+      <Route path="/new"> 
+        <NewItem isLoggedIn={isLoggedIn}/>
       </Route>
       <Route path="/login">
-        <Login />
+        <Login onUpdateIsLoggedIn = {() => setIsLoggedIn(!isLoggedIn)}/>
       </Route>
       <Route path="/signup">
         <Signup />
+      </Route>
+      <Route path="/logout">
+        <Logout />
       </Route>
       <Route path="/">
         <h4>404 NOT FOUND</h4>

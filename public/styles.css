@@ -10,6 +10,21 @@
     color: white;
 }
 
+.wishItem{
+    text-align: center;
+    padding-top: 1.75%;
+}
+
+.wishItem p{
+    font-size: 20px;
+}
+
+.wishItem button{
+    font-size: 20px;
+    background-color: red;
+    font-weight: bold;
+}
+
 #navbar{
     padding-top: 20px;
     padding-bottom: 20px;
@@ -22,41 +37,92 @@ body{
     background-color: rgb(223, 223, 223)
 }
 
-#new-item-form{
-    background-color: red;
-    position: absolute;
-    left: 27.5%;
-    height: 30%;
-    width: 40%;
+h1, h2, h3{
     text-align: center;
+}
+
+h1{
+    font-size: 50px;
+}
+
+h2{
     font-size: 40px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+#searchBar{
+    text-align: center;
+    width: 29.7%;
+    position: absolute;
+    left: 35%;
+    top: 10.75%;
+}
+
+#new-item-form, #login-form, #signup-form{
+    position: absolute;
+    text-align: center;
+    font-size: 30px;
 } 
+
+#new-item-form{
+    font-size: 40px;
+}
+
+#login-form{
+    width: 475px;
+    height: 148px;
+    left: 1039px
+}
+
+#signup-form{
+    width: 450px;
+    height: 270px;
+    left: 1052px;
+}
+
+#new-item-form{
+    width: 510px;
+    height: 295px;
+    left: 1022px;
+}
 
 #home-link{
     position: fixed;
-    left: 35%;
+    left: calc(35% + 4px);
 }
 
 #new-link{
     position: fixed;
-    left: 45%
+    left: calc(45.5% + 6.5px)
 }
 
-#login-link{
+#login-link, #logout-link{
     position: fixed;
-    left: 57.5%
+    left: 58.15%
 }
 
-input[type="text"]{
+input{
     height: 30px;
-
+    font-size: 20px;
 }
 
 #form-submit{
     font-size: 20px;
 }
 
-#login-form, #signup-form {
-    position: fixed;
-    top: 10%
+#logout-link{
+    width: 80px;
+    text-align: center;
+    padding-left: 40px;
+}
+
+#incorrect-login{
+    color: red;
+    font-style: italic;
+    text-decoration-line: underline;
+    font-size: 24px;
+    margin: 0;
 }

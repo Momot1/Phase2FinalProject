@@ -1,9 +1,29 @@
 {
   "items": [
     {
-      "name": "yrtdrte",
-      "description": "rerest",
-      "image": "teretrw",
+      "name": "Samsung 49 inch Gaming Monitor",
+      "description": "This is a crazy monitor that I would love to have",
+      "price": "2999.99",
+      "purchase": "https://www.amazon.com/SAMSUNG-Odyssey-Monitor-FreeSync-LS49AG952NNXZA/dp/B096YNP6ZR/?_encoding=UTF8&pf_rd_p=b6ab2b0a-f907-4bd2-96ed-82624bd6ea7e&pd_rd_wg=ign0V&pf_rd_r=2282X0YFA8KV4NV13PPA&pd_rd_w=hBZKH&pd_rd_r=a36e148d-a905-4673-a280-d4851c79f5ad&ref_=pd_gw_bmx_gp_f94vmzan",
+      "image": "https://m.media-amazon.com/images/I/81gf+wgrcfS._AC_SL1500_.jpg",
+      "id": 4
+    },
+    {
+      "name": "Samsung 65 inch 4K QLED Smart TV",
+      "description": "This is a top of the line TV. It is expensive, but features an extremely nice screen and viewing experience.",
+      "price": "1449.00",
+      "purchase": "https://www.ebay.com/itm/402843596467?_trkparms=5373%3A5000006400%7C5374%3ATech%7C5079%3A5000006400",
+      "image": "https://image-us.samsung.com/SamsungUS/home/televisions-and-home-theater/tvs/neo-gled-4k/qn85a/gallery/02042021/01_QN65QN85AAFXZA_011_Front3_Titan-Black-1600x1200.jpg?$product-details-jpg$",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "firstName": "mark",
+      "lastName": "momot",
+      "email": "markmomot03@gmail.com",
+      "username": "momot",
+      "password": "Admin",
       "id": 1
     }
   ]

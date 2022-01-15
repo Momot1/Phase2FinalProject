@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
 
-function NavBar(){
+function NavBar({isLoggedIn, onLogout}){
     return (
         <div id="navbar">
             <NavLink 
@@ -14,7 +14,7 @@ function NavBar(){
             </NavLink>
             
             <NavLink 
-                to="/items/new"
+                to="/new"
                 exact
                 className="links"
                 id="new-link"
@@ -22,14 +22,28 @@ function NavBar(){
                 New Item
             </NavLink>
 
-            <NavLink 
-                to="/login"
-                exact
-                className="links"
-                id="login-link"
-            >
-                Login
-            </NavLink>
+            { isLoggedIn === false ? 
+                <NavLink
+                    to="/login"
+                    exact
+                    className="links"
+                    id="login-link"
+                >
+                    Login
+                </NavLink>
+                :
+                <NavLink
+                    to="/logout"
+                    exact
+                    className="links"
+                    id="logout-link"
+                    
+                    onClick={onLogout}
+                >
+                    Logout
+                </NavLink>
+            }
+            
         </div>
     )
 }

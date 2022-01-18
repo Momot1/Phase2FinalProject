@@ -18,13 +18,6 @@
     }
   ],
   "users": [
-    {
-      "firstName": "mark",
-      "lastName": "momot",
-      "email": "markmomot03@gmail.com",
-      "username": "momot",
-      "password": "Admin",
-      "id": 1
-    }
+
   ]
 }

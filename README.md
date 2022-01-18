@@ -9,62 +9,31 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+Assuming you have json-server installed on your system, you can run 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `json-server --watch db.json`
 
-### `npm run build`
+This will give the website access to the information stored in the database. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This web application gives users the ability to not have to keep track of everything they want to buy from every website they want to buy it from. Users have the ability to add items to their wishlist, and be able to view all those items on one single homepage. They will have access to the links as to where they want to purchase it, and even be able to delete them whenever they want to. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The index.js file just loads the webpage.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The App.js file creates the NavBar and all the routes for the URL of the webpage.
 
-### `npm run eject`
+The Home.js file grabs all the data from the db.json file and puts them on the screen using WishlistItem.js file. This file just puts the image of the item on the homepage if that item is not clicked, but if the user clicks the item, it displays more information about that item. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The Login.js file handles the login functionality. It checks the database to see if the user inputted credentials matches any of the credentials in the database. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The Logout.js file just logs the user out, and sends them to the homepage. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The Signup.js file allows the user to create an account using a form, and then they'll be able to sign in with that information later on.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The NavBar.js file creates a navbar with the links for the home page, a page to be able to add a new item to their wishlist, and a login/logout button.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Finally, the NewItem.js file creates a form and allows the user to add a new item to their wishlist. When submitted, the user will be brought back to the home page with their new item added. Also, the user will only be allowed to add a new item if they are logged in. 
